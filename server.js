@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const routes = require('./routes'); // Updated this line
+const routes = require('./routes'); 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -16,6 +16,6 @@ mongoose.connect('mongodb://localhost/socialNetworkDB', {
   console.error('Could not connect to MongoDB', err);
 });
 
-app.use('/api', routes); // Updated this line
+app.use('/api', routes); 
 
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));

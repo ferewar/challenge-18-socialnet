@@ -37,8 +37,6 @@ const UserSchema = new Schema({
 UserSchema.virtual('friendCount').get(function () {
   return this.friends.length;
 });
-
-// Adjusted to remove duplicate and consideration for direct deletion methods
 UserSchema.pre('remove', function(next) {
   this.model('Thought').deleteMany({ username: this.username }, next);
 });
